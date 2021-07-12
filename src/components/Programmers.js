@@ -36,7 +36,8 @@ export default function Programmers() {
     // It's going to utilize both slices of state to return the _name_ of the featured dev.
     // The beauty of closures is that we can "see" both slices of state from this region
     // of the program, without needing to inject the information through arguments.
-    return pro[featured-1].name
+    return featured.name
+
   };
 
   const style = {
@@ -56,7 +57,7 @@ export default function Programmers() {
           we could never add or edit programmers in the future. The list would be a static thing." */
           pro.map(dev =>
             <div className='programmer' key={dev.id}>
-              {dev.name} <button onClick={() => {featuredList(dev.id)}}>Feature</button>
+              {dev.name} <button onClick={() => {featuredList(dev)}}>Feature</button>
             </div>
           )
         }
